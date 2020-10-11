@@ -2,19 +2,19 @@ import React from 'react';
 
 const categories = [
   {
-    name: "commercial",
+    name: "Commercial",
     description: "Photos of grocery stores, food trucks, and other commercial projects"
   },
   {
-    name: "portraits",
+    name: "Portraits",
     description: "Portraits of people in my life"
   },
   {
-    name: "food",
+    name: "Food",
     description: "Delicious delicacies"
   },
   {
-    name: "landscape",
+    name: "Landscape",
     description: "Fields, farmhouses, waterfalls, and the beauty of nature"
   }
 ];
@@ -27,7 +27,7 @@ const Nav = () => {
   return (
     <header>
       <h2>
-        <a href ='/'>
+        <a href ="/">
           <span role="img" aria-label="camera"> 📸</span> Oh Snap!
         </a>
       </h2>
@@ -41,21 +41,17 @@ const Nav = () => {
           <li>
             <span>Contact</span>
           </li>
-        </ul>
-        <ul>
           {
-            categories.map(category => 
-              (
+            categories.map(category => (
               <li
-                className="mx=1"
-                key={category.name}//often this key property is a unique id/name for the element
+                className="mx-1"
+                key={category.name} // key attribute is used like an id attribute // whenever mapping over anything in JSX the outermost element must have a key attribute that's set to be something unique. Helps React keep track of items in the virtual DOM
               >
-                <span onClick={() => categorySelected(category.name)}> {/*adding click event listener on the span*/}
+                <span onClick={() => categorySelected(category.name)}> {/*attaching an event listener directly on the element then executing a function on the click event*/}
                   {category.name}
                 </span>
               </li>
-              )
-            )
+            ))
           }
         </ul>
       </nav>
