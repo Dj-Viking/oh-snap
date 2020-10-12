@@ -33,7 +33,7 @@ body {
   font-weight: 600;
   line-height: 1.5;
   font-size: 18px;
-  letter-spacing: .1em;
+  letter-spacing: 0;
   background: var(--dark);
   color: var(--light);
   font-family: 'Poiret One', cursive;
@@ -49,6 +49,7 @@ h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   margin: 5px 0;
+  width: 25%;
   line-height: 1.25;
 }
 
@@ -146,8 +147,18 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
+ul {
+  padding: 0;
+}
+
+.nav-ul {
+  margin-right: 95px;
+}
+
 li {
   list-style: none;
+  width: 100px;
+  
 }
 
 nav a:hover {
@@ -175,6 +186,7 @@ textarea {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .space-between {

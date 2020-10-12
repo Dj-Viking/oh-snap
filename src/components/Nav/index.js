@@ -1,54 +1,64 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers.js';
 
-const categories = [
-  {
-    name: "Commercial",
-    description: "Photos of grocery stores, food trucks, and other commercial projects"
-  },
-  {
-    name: "Portraits",
-    description: "Portraits of people in my life"
-  },
-  {
-    name: "Food",
-    description: "Delicious delicacies"
-  },
-  {
-    name: "Landscape",
-    description: "Fields, farmhouses, waterfalls, and the beauty of nature"
-  }
-];
-
-const categorySelected = (name) => {
-  console.log(`category selected: ${name}`);
-}
-
-const Nav = () => {
+//passing down the props from the App component
+//because we lifted the state of Nav up to App and passing it down.
+// so that other components can be aware of the state of another component
+function Nav(props) {
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory
+  } = props;
+  console.log(props);
+  useEffect(
+    () => {
+      document.title = capitalizeFirstLetter(currentCategory.name);
+    }, [currentCategory]
+  );
   return (
     <header className="flex-row">
       <h2>
         <a data-testid="link" href ="/">
-          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
+          <span role="img" aria-label="camera"> 
+            {" "}
+            📸
+          </span> 
+          {" "}
+          Oh Snap!
         </a>
       </h2>
-      <nav>
+      <nav className="nav-ul">
         <ul className="flex-row">
-          <li className="mx-2">
+          <li className="">
             <a data-testid="about" href="#about">
               About Me
             </a>
           </li>
           <li>
-            <span>Contact</span>
+            Contact
           </li>
           {
             categories.map(category => (
               <li
-                className="mx-1"
-                key={category.name} // key attribute is used like an id attribute // whenever mapping over anything in JSX the outermost element must have a key attribute that's set to be something unique. Helps React keep track of items in the virtual DOM
+                // key attribute is used like an id attribute // whenever mapping over anything in JSX the outermost element must have a key attribute that's set to be something unique. Helps React keep track of items in the virtual DOM
+                className = {
+                  //start by initializing the category state as an array of a few objects. and initial state is commercial
+                  // the evaluation below will check if currentCategory.name === category.name an if its true the 'navActive' class will be returned to this <li> element
+                  `mx-1
+                  ${currentCategory.name === category.name && 'navActive'}`
+                }
+                key={category.name}
               >
-                <span onClick={() => categorySelected(category.name)}> {/*attaching an event listener directly on the element then executing a function on the click event*/}
-                  {category.name}
+                {/*attaching an event listener directly on the element then executing a function on the click event*/}
+                <span
+                  onClick = {
+                    () => {
+                      setCurrentCategory(category)
+                    }
+                  }
+                > 
+                  {capitalizeFirstLetter(category.name)}
                 </span>
               </li>
             ))
@@ -56,7 +66,7 @@ const Nav = () => {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
 export default Nav;
