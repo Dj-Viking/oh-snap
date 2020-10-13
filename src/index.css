@@ -98,6 +98,7 @@ header {
 
 header a {
   color: var(--light);
+  margin-left: 10px;
 }
 
 button {
@@ -158,14 +159,15 @@ ul {
 li {
   list-style: none;
   width: 100px;
-  
+  /* background-color: green; */
+  text-align: center;
 }
 
 nav a:hover {
   text-decoration: none;
 }
 
-nav  li {
+nav li {
   cursor: pointer;
 }
 
