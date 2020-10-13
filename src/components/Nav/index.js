@@ -30,12 +30,12 @@ function Nav(props) {
       </h2>
       <nav className="nav-ul">
         <ul className="flex-row">
-          <li className="">
+          <li className="mx-2">
             <a data-testid="about" href="#about">
               About Me
             </a>
           </li>
-          <li>
+          <li className='mx-1'>
             Contact
           </li>
           {
