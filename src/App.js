@@ -36,7 +36,9 @@ function App() {
         currentCategory={currentCategory}
       />
       <main>
-        <Gallery />
+        <Gallery
+          currentCategory={currentCategory}
+        />
         <About />
       </main>
       {/* <SomeComponent2 /> */}
