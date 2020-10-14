@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav/index.js';
 import About from './components/About/index.js';
 import Gallery from './components/Gallery/index.js';  
-// import SomeComponent2 from './components/SomeComponent2.js';
+//import SomeComponent from './components/SomeComponent.js';
 
 function App() {
   const [ categories ] = useState
@@ -41,7 +41,7 @@ function App() {
         />
         <About />
       </main>
-      {/* <SomeComponent2 /> */}
+      {/* <SomeComponent /> */}
     </div>
   );
 }
