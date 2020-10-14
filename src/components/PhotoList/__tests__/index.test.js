@@ -19,7 +19,7 @@ describe('PhotoList is rendering', () => {
   it('renders', () => {
     render(
       <PhotoList
-        category={mockCategory}
+        // category={mockCategory}
       />
     );
   });
@@ -28,7 +28,7 @@ describe('PhotoList is rendering', () => {
     const { asFragment } = render
     (
       <PhotoList
-        category={mockCategory}
+        // category={mockCategory}
       />
     );
     expect(asFragment()).toMatchSnapshot();

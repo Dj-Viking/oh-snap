@@ -103,10 +103,10 @@ function PhotoList(props) {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
     },
   ]);
-  console.log(category);
+  // console.log(category);
   console.log(category.split(' ')[0].toLowerCase());
-  console.log(photos);
-  const currentPhotos = photos.filter(photo => photo.category === category.split(' ')[0].toLowerCase());
+  // console.log(photos);
+  const currentPhotos = photos.filter(photo => photo.category === category);
   console.log(currentPhotos);
   return (
     <div>
@@ -114,7 +114,7 @@ function PhotoList(props) {
       currentPhotos.map(
         (image, i) => (
           <img
-            src={require(`../../assets/small/${category.split(' ')[0].toLowerCase()}/${i}.jpg`)}
+            src={require(`../../assets/small/${category}/${i}.jpg`)}
             alt={image.name}
             className="img-thumbnail mx-1"
             key={image.name}

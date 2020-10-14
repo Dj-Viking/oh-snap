@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import Nav from './components/Nav/index.js';
 import About from './components/About/index.js';
 import Gallery from './components/Gallery/index.js';  
-//import SomeComponent from './components/SomeComponent.js';
+import SomeComponent from './components/SomeComponent.js';
 
 function App() {
   const [ categories ] = useState
   (
     [
       {
-        name: "Commercial",
+        name: "commercial",
         description: "Photos of grocery stores, food trucks, and other commercial projects"
       },
       {
-        name: "Portraits",
+        name: "portraits",
         description: "Portraits of people in my life"
       },
       {
-        name: "Food",
+        name: "food",
         description: "Delicious delicacies"
       },
       {
-        name: "Landscape",
+        name: "landscape",
         description: "Fields, farmhouses, waterfalls, and the beauty of nature"
       }
     ]
@@ -41,7 +41,7 @@ function App() {
         />
         <About />
       </main>
-      {/* <SomeComponent /> */}
+      <SomeComponent />
     </div>
   );
 }
