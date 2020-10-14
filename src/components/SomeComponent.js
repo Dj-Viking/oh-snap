@@ -69,13 +69,13 @@ function SomeComponent() {
 
   return (
     <div onClick={startStopwatch}>
-      {/* {red} */}
+      {red}
       <button 
         style={{backgroundColor: `rgba(${red}, 0, 150, 1`}}
         // onMouseOver={startStopwatch}
       > Click me
       </button>
-      {/* {green} */}
+      {green}
       <button 
         style={{backgroundColor: `rgba(0, ${green}, 150, 1`}}
       > Click me

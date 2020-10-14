@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers.js';
+// import { capitalizeFirstLetter } from '../../utils/helpers.js';
 // import Modal from '../Modal';
 
 function PhotoList(props) {
@@ -103,9 +103,9 @@ function PhotoList(props) {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
     },
   ]);
-  // console.log(category);
-  //console.log(category.split(' ')[0].toLowerCase());
-  // console.log(photos);
+  console.log(category);
+  console.log(category.split(' ')[0].toLowerCase());
+  console.log(photos);
   const currentPhotos = photos.filter(photo => photo.category === category.split(' ')[0].toLowerCase());
   console.log(currentPhotos);
   return (
