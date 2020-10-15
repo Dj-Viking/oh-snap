@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 // import { capitalizeFirstLetter } from '../../utils/helpers.js';
-// import Modal from '../Modal';
+import Modal from '../Modal';
 
 function PhotoList(props) {
   const {
     category
   } = props;
+  const [currentPhoto, setCurrentPhoto]  = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [photos] = useState([
     {
       name: 'Grocery aisle',
@@ -108,20 +110,39 @@ function PhotoList(props) {
   // console.log(photos);
   const currentPhotos = photos.filter(photo => photo.category === category);
   console.log(currentPhotos);
+  const toggleModal = (image, i) => {
+    //current photo
+    setCurrentPhoto(
+      {
+        ...image,
+        index: i
+      }
+    );
+    setIsModalOpen(!isModalOpen);//set true
+  }
   return (
     <div>
-    {
-      currentPhotos.map(
-        (image, i) => (
-          <img
-            src={require(`../../assets/small/${category}/${i}.jpg`)}
-            alt={image.name}
-            className="img-thumbnail mx-1"
-            key={image.name}
-          />
+      {
+        isModalOpen &&//check if isModalOpen is true then render Modal
+        <Modal
+          currentPhoto={currentPhoto}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+      }
+      {
+        currentPhotos.map(
+          (image, i) => (
+            <img
+              src={require(`../../assets/small/${category}/${i}.jpg`)}
+              alt={image.name}
+              className="img-thumbnail mx-1"
+              key={image.name}
+              onClick={() => toggleModal(image, i)}
+            />
+          )
         )
-      )
-    }
+      }
     </div>
   );
 }
