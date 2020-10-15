@@ -8,7 +8,9 @@ function Nav(props) {
   const {
     categories = [],
     setCurrentCategory,
-    currentCategory
+    currentCategory,
+    contactSelected,
+    setContactSelected
   } = props;
   //console.log(props);
   useEffect(
@@ -31,11 +33,22 @@ function Nav(props) {
       <nav className="nav-ul">
         <ul className="flex-row">
           <li className="mx-2">
-            <a data-testid="about" href="#about">
+            <a 
+              data-testid="about" 
+              href="#about"
+              onClick={() => setContactSelected(false)}
+            >
               About Me
             </a>
           </li>
-          <li className='mx-1'>
+          <li 
+            className={//if contactSelected is true then place navActive style to this element
+              `mx-1
+              ${contactSelected && 'navActive'}
+              `
+            }
+            onClick={() => setContactSelected(true)}
+          >
             Contact
           </li>
           {
@@ -46,7 +59,8 @@ function Nav(props) {
                   //start by initializing the category state as an array of a few objects. and initial state is commercial
                   // the evaluation below will check if currentCategory.name === category.name an if its true the 'navActive' class will be returned to this <li> element
                   `mx-1
-                  ${currentCategory.name === category.name && 'navActive'}`
+                  ${currentCategory.name === category.name && !contactSelected && 'navActive'}
+                  `
                 }
                 key={category.name}
               >
@@ -54,7 +68,8 @@ function Nav(props) {
                 <span
                   onClick = {
                     () => {
-                      setCurrentCategory(category)
+                      setCurrentCategory(category);
+                      setContactSelected(false);
                     }
                   }
                 > 
