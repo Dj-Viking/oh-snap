@@ -3,6 +3,7 @@ import Nav from './components/Nav/index.js';
 import About from './components/About/index.js';
 import Gallery from './components/Gallery/index.js';  
 import SomeComponent from './components/SomeComponent.js';
+import ContactForm from './components/Contact/index.js';
 
 function App() {
   const [ categories ] = useState
@@ -36,6 +37,7 @@ function App() {
         currentCategory={currentCategory}
       />
       <main>
+        <ContactForm />
         <Gallery
           currentCategory={currentCategory}
         />
