@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d4a7b040a1bf95bbbacb2e6bd008df8",
+    "revision": "8e7d0db58dcccad14188a8ac23f87b90",
     "url": "/oh-snap/index.html"
   },
   {
-    "revision": "f1ccd81f4ca93cc74fb6",
+    "revision": "823c1e5ed5542c902342",
     "url": "/oh-snap/static/css/main.ed0b2a08.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/oh-snap/static/js/2.4c8421cb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f1ccd81f4ca93cc74fb6",
-    "url": "/oh-snap/static/js/main.40f0d9f8.chunk.js"
+    "revision": "823c1e5ed5542c902342",
+    "url": "/oh-snap/static/js/main.e028e3e2.chunk.js"
   },
   {
     "revision": "d5dfdf95e31fb92174cb",
