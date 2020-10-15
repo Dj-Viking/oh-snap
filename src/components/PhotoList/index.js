@@ -104,7 +104,7 @@ function PhotoList(props) {
     },
   ]);
   // console.log(category);
-  console.log(category.split(' ')[0].toLowerCase());
+  //console.log(category.split(' ')[0].toLowerCase());
   // console.log(photos);
   const currentPhotos = photos.filter(photo => photo.category === category);
   console.log(currentPhotos);
