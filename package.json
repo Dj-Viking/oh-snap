@@ -16,7 +16,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deploy-master": "gh-pages -b master -d build"
+    "deploy-main": "gh-pages -b main -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
